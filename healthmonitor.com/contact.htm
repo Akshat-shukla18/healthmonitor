@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact - Health Monitor</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            checkLogin();
+            loadUserProfile();
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <button onclick="location.href='index.htm'">Home</button>
+        <button onclick="location.href='aboutus.htm'">About Us</button>
+        <button class="active" onclick="location.href='contact.htm'">Contact</button>
+        <div id="profileSection" onclick="location.href='profile.htm'" style="cursor:pointer; display:flex; align-items:center; gap:8px;">
+            <img id="profilePic" src="" alt="Profile Picture" style="width:32px; height:32px; border-radius:50%; display:none;">
+            <span id="profileName" style="color:white;"></span>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>If you have any questions or feedback, please reach out to us:</p>
+        <ul>
+            <li>Email: ashukla20062006@gmail.com</li>
+            <li>Address: Sahib-ajeet singh nagar, Mohali, INDIA</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - Health Monitor</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            checkLogin();
+            loadUserProfile();
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <button onclick="location.href='index.htm'">Home</button>
+        <button class="active" onclick="location.href='aboutus.htm'">About Us</button>
+        <button onclick="location.href='contact.htm'">Contact</button>
+        <div id="profileSection" onclick="location.href='profile.htm'" style="cursor:pointer; display:flex; align-items:center; gap:8px;">
+            <img id="profilePic" src="" alt="Profile Picture" style="width:32px; height:32px; border-radius:50%; display:none;">
+            <span id="profileName" style="color:white;"></span>
+        </div>
+    </header>
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Welcome to Health Monitor, your trusted partner in personal health management. We are committed to empowering individuals with easy-to-use tools that help track vital health parameters accurately and efficiently.</p>
+            <p>Our mission is to promote wellness and proactive health management by providing innovative solutions that are accessible to everyone. We believe that informed health choices lead to better lives.</p>
+            <p>At Health Monitor, we value integrity, user privacy, and continuous improvement. Our dedicated team works tirelessly to ensure our platform meets the highest standards of reliability and user experience.</p>
+            <p>Join us on this journey towards a healthier future, where technology and care come together to support your well-being every step of the way.</p>
+        </div>
+    </body>
+        
+</body>
+</html>

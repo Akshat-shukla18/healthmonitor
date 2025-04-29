@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Health Monitor</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+        function toggleForms() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                document.getElementById('toggleText').innerText = "Don't have an account? Register here.";
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                document.getElementById('toggleText').innerText = "Already have an account? Login here.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <button onclick="location.href='index.htm'">Home</button>
+        <button onclick="location.href='aboutus.htm'">About Us</button>
+        <button onclick="location.href='contact.htm'">Contact</button>
+        <button onclick="location.href='login.htm'">Login</button>
+    </header>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+            
+            <button type="submit">Login</button>
+        </form>
+
+        <form id="registerForm" style="display:none;">
+            <h2>Register</h2>
+            <label for="regUsername">Username:</label>
+            <input type="text" id="regUsername" name="regUsername" required />
+            
+            <label for="regPassword">Password:</label>
+            <input type="password" id="regPassword" name="regPassword" required />
+            
+            <button type="submit">Register</button>
+        </form>
+
+        <p id="toggleText" onclick="toggleForms()" style="cursor:pointer; color:blue; text-decoration:underline;">
+            Don't have an account? Register here.
+        </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

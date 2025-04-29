@@ -1,0 +1,223 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    backface-visibility: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('b.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+
+.imgclass{
+    box-shadow:rgb(143, 222, 25);
+    border-radius: 4ch;
+    filter: blur(1px) saturate(2);
+    padding: 2rem;
+    height: 300px;
+}
+.container {
+    margin: auto;
+    width: 40%;
+    align-items: center;
+    padding: 20px;
+    background: #a7a0a0;
+    border-radius: 8px;
+    animation: containerShadowChange 1s linear infinite;
+    box-shadow: 40px 60px 10px rgba(0, 89, 94, 0.025);
+}
+
+@keyframes containerShadowChange {
+    0% {
+        box-shadow: 0 0 15px rgba(30, 44, 33, 0.5);
+    }
+    20% {
+        box-shadow: 0 0 15px rgba(9, 59, 20, 0.5);
+    }
+    40% {
+        box-shadow: 0 60 15px rgba(38, 152, 64, 0.5);
+    }
+    60% {
+        box-shadow: 0 7 15px rgba(14, 84, 11, 0.5);
+    }
+    80% {
+        box-shadow: 0 0 15px rgba(7, 53, 14, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(4, 30, 11, 0.5);
+    }
+}
+
+.login-container {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding: 30px;
+    background-color: #fff;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+#imageContainer {
+    position: fixed;
+    top: 20%;
+    left: .51%;
+    margin-left: 50px;
+    width: 200px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    overflow: hidden;
+    
+}
+
+#imageContainer img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    border-radius: 6px;
+    filter: drop-shadow(5px 5px 40px #555);
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: #315339;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #52915f;
+}
+
+#result {
+    position: fixed;
+    top: 20%;
+    right: 3.5%;
+    width: 250px;
+    max-height: 70vh;
+    overflow-y: auto;
+    font-weight: bold;
+    background-color: rgba(236, 220, 225, 0.95);
+    border: 1px solid #28a745;
+    padding: 14px;
+    border-radius: 6px 6px 6px 6px;
+    white-space: pre-line;
+    color: #0b100c;
+    box-shadow: -2px 2px 12px rgba(0,0,0,0.2);
+    z-index: 10000;
+}
+
+/* Navbar flex styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4a6c52;
+    padding: 10px 20px;
+    animation: headerFadeSlide 1s ease forwards, headerColorChange 6s linear infinite;
+}
+
+@keyframes headerColorChange {
+    0% { background-color: #4a6c52; }
+    20% { background-color: #3b5a3f; }
+    40% { background-color: #2e4a33; }
+    60% { background-color: #4a6c52; }
+    80% { background-color: #3b5a3f; }
+    100% { background-color: #4a6c52; }
+}
+
+@keyframes headerFadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color:#186129;
+}
+
+#profileSection {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+#profileSection img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* Active navbar item styling */
+header button.active,
+#profileSection.active {
+    background-color:#28a745;
+    font-weight: bold;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="website icon" type="png" href="download.png">
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            checkLogin();
+            loadUserProfile();
+        };
+    </script>
+</head>
+<body>
+    
+    <header>
+        <button class="active" onclick="location.href='index.htm'">Home</button>
+        <button onclick="location.href='aboutus.htm'">About Us</button>
+        <button onclick="location.href='contact.htm'">Contact</button>
+        <div id="profileSection" onclick="location.href='profile.htm'" style="cursor:pointer; display:flex; align-items:center; gap:8px;">
+            <img id="profilePic" src="" alt="Profile Picture" style="width:32px; height:32px; border-radius:50%; display:none;">
+            <span id="profileName" style="color:white;"></span>
+        </div>
+    </header>
+    <div id="mainFlexContainer">
+        <div id="imageContainer">
+            <img src="images.jpeg" alt="Health Image" />
+        </div>
+
+        <div class="container">
+            <h1>Health Monitor</h1>
+            <form id="healthForm">
+                <label for="heartRate">Heart Rate (bpm):</label>
+                <input type="number" id="heartRate" name="heartRate" required>
+
+                <label for="bloodPressure">Blood Pressure (mmHg):</label>
+                <input type="text" id="bloodPressure" name="bloodPressure" placeholder="e.g., 120/80" required>
+
+                <label for="bloodSugar">Blood Sugar (mg/dL):</label>
+                <input type="number" id="bloodSugar" name="bloodSugar" required>
+
+                <label for="hemoglobin">Hemoglobin (g/dL):</label>
+                <input type="number" id="hemoglobin" name="hemoglobin" required>
+
+                <button type="button" onclick="checkHealth()">Check Health</button>
+            </form>
+
+            <div id="result">
+                <h2> Reports :</h2>
+            </div>
+        
+        </div>
+
+</body>
+</html>
