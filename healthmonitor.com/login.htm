@@ -22,38 +22,36 @@
     </script>
 </head>
 <body>
-    <header>
-        <button onclick="location.href='index.htm'">Home</button>
-        <button onclick="location.href='aboutus.htm'">About Us</button>
-        <button onclick="location.href='contact.htm'">Contact</button>
-        <button onclick="location.href='login.htm'">Login</button>
-    </header>
+   <header><button style="margin-left: 85%; background-color: rgb(81, 158, 158);">HealthMonitor </button></header>
     <div class="container">
+        <div class="login-container">
         <h1>Login</h1>
         <form id="loginForm">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required />
+            <input type="text" id="username" name="username" required /><br>
             
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required />
+            <input type="password" id="password" name="password" required /><br>
             
             <button type="submit">Login</button>
         </form>
-
+     </div>
+     <div class="register-container">
         <form id="registerForm" style="display:none;">
             <h2>Register</h2>
-            <label for="regUsername">Username:</label>
-            <input type="text" id="regUsername" name="regUsername" required />
+            <label for="regUsername">Username : </label>
+            <input type="text" id="regUsername" name="regUsername" required /><br>
             
-            <label for="regPassword">Password:</label>
-            <input type="password" id="regPassword" name="regPassword" required />
+            <label for="regPassword"> Password : </label>
+            <input type="password" id="regPassword" name="regPassword" required /><br>
             
             <button type="submit">Register</button>
         </form>
-
+    </div>
         <p id="toggleText" onclick="toggleForms()" style="cursor:pointer; color:blue; text-decoration:underline;">
             Don't have an account? Register here.
         </p>
+        </button>
     </div>
     <script src="script.js"></script>
 </body>
