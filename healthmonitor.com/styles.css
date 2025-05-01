@@ -41,10 +41,11 @@ body::before {
     height: 300px;
 }
 .container {
-    margin: auto;
+
+border: 3px solid rgb(200, 211, 200);
+padding: 10px;
     width: 40%;
-    align-items: center;
-    padding: 20px;
+    padding: 10px;
     background: #a7a0a0;
     border-radius: 8px;
     animation: containerShadowChange 1s linear infinite;
@@ -73,28 +74,54 @@ body::before {
 }
 
 .login-container {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
-    padding: 30px;
-    background-color: #fff;
-    max-width: 400px;
-    margin: 2rem auto;
+    
+    margin-right: 150px;
+    margin-top: 70px;
+    width: 90%;
+    align-items: center;
+    padding: 15px;
+    background: #8d7d7d;
+    border-radius: 8px;
+    animation: containerShadowChange 1s linear infinite;
+    box-shadow: 40px 60px 10px rgba(0, 89, 94, 0.025);
+
+    
 }
+.register-container {
+    
+    margin-right: 140px;
+    width: 90%;
+    align-items: center;
+    background: #8d7d7d;
+    border-radius: 8px;
+    animation: containerShadowChange 1s linear infinite;
+    box-shadow: 40px 60px 10px rgba(0, 89, 94, 0.025);
+
+    
+}
+
+
+
+    
+
+
+
 #imageContainer {
-    position: fixed;
-    top: 20%;
+    position: relative;
+    margin: auto;
     left: .51%;
-    margin-left: 50px;
-    width: 200px;
-    border-radius: 6px;
+    margin-left: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 60px;
     box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
     overflow: hidden;
     
 }
 
 #imageContainer img {
-    width: 200px;
-    height: 200px;
+    width: auto;
+    height: 105px;
     display: block;
     border-radius: 6px;
     filter: drop-shadow(5px 5px 40px #555);
@@ -102,6 +129,10 @@ body::before {
 
 h1 {
     text-align: center;
+}
+
+h2 {
+    text-align:calc(10px + 100px);
 }
 
 form {
@@ -123,7 +154,7 @@ input {
 button {
     padding: 10px;
     background-color: #315339;
-    color: white;
+    color: rgb(247, 240, 240);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -134,10 +165,10 @@ button:hover {
 }
 
 #result {
-    position: fixed;
-    top: 20%;
-    right: 3.5%;
-    width: 250px;
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    width: 70%;
     max-height: 70vh;
     overflow-y: auto;
     font-weight: bold;
@@ -220,4 +251,15 @@ header button.active,
 #profileSection.active {
     background-color:#28a745;
     font-weight: bold;
+}
+
+.container {
+    margin: auto;
+    width: 40%;
+    align-items:center;
+    padding: 20px;
+    background: #a7a0a0;
+    border-radius: 8px;
+    animation: containerShadowChange 1s linear infinite;
+    box-shadow: 40px 60px 10px rgba(0, 89, 94, 0.025);
 }
