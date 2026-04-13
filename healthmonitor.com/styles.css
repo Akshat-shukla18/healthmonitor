@@ -274,8 +274,57 @@ button:hover {
         width: 200px;
     }
 
+<<<<<<< HEAD
     header {
         flex-direction: column;
         gap: 10px;
     }
 }
+=======
+header button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color:#186129;
+}
+
+#profileSection {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+#profileSection img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* Active navbar item styling */
+header button.active,
+#profileSection.active {
+    background-color:#28a745;
+    font-weight: bold;
+}
+
+.container {
+    margin: auto;
+    width: 50%;
+    align-items:center;
+    padding: 20px;
+    background: #a7a0a0;
+    border-radius: 8px;
+    animation: containerShadowChange 1s linear infinite;
+    box-shadow: 40px 60px 10px rgba(0, 89, 94, 0.025);
+}
+>>>>>>> 0b60d634ed2ebc5241aaab9f0d1f08c16b5fd554
