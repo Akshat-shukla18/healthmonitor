@@ -1,265 +1,281 @@
-html, body {
-    height: 100%;
+/* ================= RESET ================= */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    position: relative;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', sans-serif;
     min-height: 100vh;
-    width: 100vw;
     overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    backface-visibility: hidden;
+    color: #1b3c2e;
+
+    background: linear-gradient(-45deg, #e6f7f1, #d4f1f4, #c7f9cc, #e0f7fa);
+    background-size: 400% 400%;
+    animation: gradientFlow 12s ease infinite;
 }
 
-body::before {
-    content: "";
+/* ================= BACKGROUND ================= */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ================= BUBBLES ================= */
+.bubbles {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('b.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    filter: blur(8px);
+    width: 100%;
+    height: 100%;
     z-index: -1;
 }
 
-
-.imgclass{
-    box-shadow:rgb(143, 222, 25);
-    border-radius: 4ch;
-    filter: blur(1px) saturate(2);
-    padding: 2rem;
-    height: 300px;
-}
-.container {
-
-border: 3px solid rgb(200, 211, 200);
-padding: 10px;
-    width: 40%;
-    padding: 10px;
-    background: #a7a0a0;
-    border-radius: 8px;
-    animation: containerShadowChange 1s linear infinite;
-    box-shadow: 40px 60px 10px rgba(0, 89, 94, 0.025);
+.bubbles span {
+    position: absolute;
+    bottom: -120px;
+    border-radius: 50%;
+    background: rgba(0,150,136,0.15);
+    animation: rise linear infinite;
 }
 
-@keyframes containerShadowChange {
-    0% {
-        box-shadow: 0 0 15px rgba(30, 44, 33, 0.5);
-    }
-    20% {
-        box-shadow: 0 0 15px rgba(9, 59, 20, 0.5);
-    }
-    40% {
-        box-shadow: 0 60 15px rgba(38, 152, 64, 0.5);
-    }
-    60% {
-        box-shadow: 0 7 15px rgba(14, 84, 11, 0.5);
-    }
-    80% {
-        box-shadow: 0 0 15px rgba(7, 53, 14, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 15px rgba(4, 30, 11, 0.5);
-    }
+.bubbles span:nth-child(1){left:10%;width:20px;height:20px;animation-duration:8s;}
+.bubbles span:nth-child(2){left:25%;width:35px;height:35px;animation-duration:12s;}
+.bubbles span:nth-child(3){left:40%;width:15px;height:15px;animation-duration:10s;}
+.bubbles span:nth-child(4){left:60%;width:40px;height:40px;animation-duration:14s;}
+.bubbles span:nth-child(5){left:75%;width:25px;height:25px;animation-duration:9s;}
+.bubbles span:nth-child(6){left:90%;width:30px;height:30px;animation-duration:11s;}
+
+@keyframes rise {
+    from { transform: translateY(0); opacity: 0.6; }
+    to { transform: translateY(-120vh); opacity: 0; }
 }
 
-.login-container {
-    
-    margin-right: 150px;
-    margin-top: 70px;
-    width: 90%;
+/* ================= NAVBAR ================= */
+header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    background: #8d7d7d;
-    border-radius: 8px;
-    animation: containerShadowChange 1s linear infinite;
-    box-shadow: 40px 60px 10px rgba(0, 89, 94, 0.025);
+    padding: 15px 40px;
 
-    
-}
-.register-container {
-    
-    margin-right: 140px;
-    width: 90%;
-    align-items: center;
-    background: #8d7d7d;
-    border-radius: 8px;
-    animation: containerShadowChange 1s linear infinite;
-    box-shadow: 40px 60px 10px rgba(0, 89, 94, 0.025);
+    background: linear-gradient(90deg, #0f9b8e, #38ef7d);
+    color: white;
 
-    
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
 }
 
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
 
+.nav {
+    display: flex;
+    gap: 20px;
+}
 
-    
-
-
-
-#imageContainer {
+header button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    cursor: pointer;
     position: relative;
-    margin: auto;
-    left: .51%;
-    margin-left: 10px;
-    width: 100px;
-    height: 100px;
-    border-radius: 60px;
-    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
-    overflow: hidden;
-    
 }
 
-#imageContainer img {
-    width: auto;
-    height: 105px;
-    display: block;
-    border-radius: 6px;
-    filter: drop-shadow(5px 5px 40px #555);
+header button::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: 0.3s;
 }
 
-h1 {
+header button:hover::after {
+    width: 100%;
+}
+
+#profileSection {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+/* ================= HERO PAGE ================= */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    min-height: 90vh;
+}
+
+/* LEFT */
+.left {
+    width: 40%;
     text-align: center;
 }
 
-h2 {
-    text-align:calc(10px + 100px);
+.left img {
+    width: 280px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    animation: float 4s ease-in-out infinite;
 }
 
+.left h2 {
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+.left p {
+    opacity: 0.7;
+}
+
+/* FLOAT */
+@keyframes float {
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+/* RIGHT */
+.right {
+    width: 55%;
+}
+
+/* ================= GLASS CONTAINER ================= */
+.container, .auth-container {
+    width: 100%;
+    padding: 30px;
+
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(18px);
+
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.15),
+        inset 0 0 20px rgba(255,255,255,0.2);
+
+    transition: 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* ================= LOGIN PAGE ================= */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.auth-container {
+    width: 350px;
+}
+
+/* ================= FORM ================= */
 form {
     display: flex;
     flex-direction: column;
 }
 
 label {
-    margin: 10px 0 5px;
+    margin: 12px 0 5px;
+    font-weight: 600;
 }
 
+/* INPUT */
 input {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.7);
+
+    font-size: 15px;
+    transition: 0.25s;
 }
 
+input:focus {
+    outline: none;
+    border-color: #26a69a;
+
+    box-shadow:
+        0 0 0 3px rgba(38,166,154,0.2),
+        0 5px 15px rgba(0,0,0,0.1);
+
+    transform: scale(1.02);
+}
+
+/* ================= BUTTON ================= */
 button {
-    padding: 10px;
-    background-color: #315339;
-    color: rgb(247, 240, 240);
+    margin-top: 15px;
+    padding: 14px;
+
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #26a69a, #66bb6a);
+    color: white;
+
+    font-weight: 600;
     cursor: pointer;
+
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #52915f;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(38,166,154,0.4);
 }
 
+/* ================= RESULT ================= */
 #result {
-    position: relative;
-    margin: auto;
-    margin-top: 30px;
-    width: 70%;
-    max-height: 70vh;
-    overflow-y: auto;
-    font-weight: bold;
-    background-color: rgba(236, 220, 225, 0.95);
-    border: 1px solid #28a745;
-    padding: 14px;
-    border-radius: 6px 6px 6px 6px;
-    white-space: pre-line;
-    color: #0b100c;
-    box-shadow: -2px 2px 12px rgba(0,0,0,0.2);
-    z-index: 10000;
+    margin-top: 20px;
+    padding: 15px;
+
+    background: rgba(255,255,255,0.7);
+    border-left: 5px solid #26a69a;
+
+    border-radius: 12px;
+
+    animation: fadeIn 0.5s ease;
 }
 
-/* Navbar flex styling */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4a6c52;
-    padding: 10px 20px;
-    animation: headerFadeSlide 1s ease forwards, headerColorChange 6s linear infinite;
+@keyframes fadeIn {
+    from { opacity:0; transform:translateY(10px);}
+    to { opacity:1; transform:translateY(0);}
 }
 
-@keyframes headerColorChange {
-    0% { background-color: #4a6c52; }
-    20% { background-color: #3b5a3f; }
-    40% { background-color: #2e4a33; }
-    60% { background-color: #4a6c52; }
-    80% { background-color: #3b5a3f; }
-    100% { background-color: #4a6c52; }
-}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
 
-@keyframes headerFadeSlide {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
+    .hero {
+        flex-direction: column;
+        text-align: center;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+
+    .left, .right {
+        width: 100%;
     }
-}
 
-.nav-buttons {
-    display: flex;
-    gap: 15px;
-}
+    .left img {
+        width: 200px;
+    }
 
-header button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 16px;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-header button:hover {
-    background-color:#186129;
-}
-
-#profileSection {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    color: white;
-}
-
-#profileSection img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    margin-right: 8px;
-}
-
-/* Active navbar item styling */
-header button.active,
-#profileSection.active {
-    background-color:#28a745;
-    font-weight: bold;
-}
-
-.container {
-    margin: auto;
-    width: 40%;
-    align-items:center;
-    padding: 20px;
-    background: #a7a0a0;
-    border-radius: 8px;
-    animation: containerShadowChange 1s linear infinite;
-    box-shadow: 40px 60px 10px rgba(0, 89, 94, 0.025);
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
