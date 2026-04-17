@@ -6,7 +6,7 @@ HealthMonitor is a web-based platform that allows users to upload and analyze th
 🚀 Features
 📄 Report Analysis
 Upload your medical reports and get a structured breakdown of key metrics.
-📊 Health Insights
+~ Health Insights
 Understand whether your parameters are within normal ranges.
 ⚠️ Abnormality Detection
 Highlights values that are outside recommended limits.
